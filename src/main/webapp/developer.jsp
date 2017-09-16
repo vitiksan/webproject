@@ -13,7 +13,6 @@
 <body>
 <h1>I coding in
  <%
-
      request.getParameter("language");
  %>${language} ${number} ${dataType}</h1>
 </body>

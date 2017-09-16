@@ -79,16 +79,6 @@
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>TimerResult</servlet-name>
-    <servlet-class>com.test.servlets.TimerResult</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>TimerResult</servlet-name>
-    <url-pattern>/TimerResult</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
     <servlet-name>Servlet1</servlet-name>
     <servlet-class>com.test.servlets.Servlet1</servlet-class>
   </servlet>

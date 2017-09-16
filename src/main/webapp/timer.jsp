@@ -11,11 +11,13 @@
     <title>Timer</title>
 </head>
 <body>
-<form action="Timer" method="post">
-    <label>Hours :<input type="number" name="hours" value="0"></label><br>
-    <label>Minutes :<input type="number" name="minutes" value="0"></label><br>
-    <label>Seconds :<input type="number" name="seconds" value="10"></label><br><br>
-    <input type="submit" name="start" value="Start">
-</form>
+<div align="center">
+    <form action="Timer" method="post">
+        <label>Hours :<input type="number" name="hours" value="0"></label><br>
+        <label>Minutes :<input type="number" name="minutes" value="0"></label><br>
+        <label>Seconds :<input type="number" name="seconds" value="10"></label><br><br>
+        <input type="submit" name="start" value="Start">
+    </form>
+</div>
 </body>
 </html>
