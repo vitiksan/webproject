@@ -19,12 +19,6 @@
     Integer hours = 0;
     Integer minutes = 0;
     Integer seconds = 0;
-    boolean end = false;
-    Enumeration<String> names = request.getParameterNames();
-    while (names.hasMoreElements()) {
-        if (names.nextElement().equals("back"))
-            end = true;
-    }
     for (int i = 0; i < cookies.length; i++) {
         if (cookies[i].getName().equals("hours")) {
             hours = Integer.parseInt(cookies[i].getValue());
@@ -39,8 +33,6 @@
         writer.print("<h1 align=\"center\">" + hours + ":" + minutes + ":" + seconds + "</h1>");
     } else {
         writer.print("<h1 align=\"center\">The end!</h1>");
-        end = true;
-
     }
 
     if (seconds > 0) seconds--;
@@ -58,11 +50,6 @@
     cookieMinutes.setHttpOnly(true);
     Cookie cookieSeconds = new Cookie("seconds", seconds.toString());
     cookieSeconds.setHttpOnly(true);
-    if (end) {
-        cookieHours.setMaxAge(0);
-        cookieMinutes.setMaxAge(0);
-        cookieSeconds.setMaxAge(0);
-    }
     response.addCookie(cookieHours);
     response.addCookie(cookieMinutes);
     response.addCookie(cookieSeconds);
