@@ -70,9 +70,9 @@
     response.setIntHeader("Refresh", 1);
 %>
 <div align="center">
-<form action="Timer" method="get">
-    <input type="submit" name="back" value="Back">
-</form>
+    <form action="Timer" method="get">
+        <input type="submit" name="back" value="Back">
+    </form>
 </div>
 </body>
 </html>

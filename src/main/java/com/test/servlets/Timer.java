@@ -16,11 +16,11 @@ public class Timer extends HttpServlet {
         Integer hours = Integer.parseInt(request.getParameter("hours"));
         Integer minutes = Integer.parseInt(request.getParameter("minutes"));
         Integer seconds = Integer.parseInt(request.getParameter("seconds"));
-        Cookie cookieHours = new Cookie("hours", hours.toString());
+        Cookie cookieHours = new Cookie("hours",hours.toString());
         cookieHours.setHttpOnly(true);
-        Cookie cookieMinutes = new Cookie("minutes", minutes.toString());
+        Cookie cookieMinutes = new Cookie("minutes",minutes.toString());
         cookieMinutes.setHttpOnly(true);
-        Cookie cookieSeconds = new Cookie("seconds", seconds.toString());
+        Cookie cookieSeconds = new Cookie("seconds",seconds.toString());
         cookieSeconds.setHttpOnly(true);
         response.addCookie(cookieHours);
         response.addCookie(cookieMinutes);
