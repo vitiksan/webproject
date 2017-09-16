@@ -5,19 +5,22 @@
     <title>Welcome</title>
 </head>
 <body>
-<h1>Welcome to company</h1>
 <%
-    //Login user = (Login) request.getAttribute("bean");
-    //PrintWriter writer = response.getWriter();
-    //Cookie[] cookies = request.getCookies();
-
-    //writer.print("Hello " + cookies[1].getValue());
-    //for (int i = 0; i <cookies.length;i++) {
-    //    writer.print("Hello " + cookies[i].getValue());
-    //}
+    PrintWriter writer = response.getWriter();
+    Cookie[] cookies = request.getCookies();
+    String login = "";
+    for (int i = 0; i < cookies.length; i++) {
+        if (cookies[i].getName().equals("login")) {
+            login = cookies[i].getValue();
+        }
+    }
+    writer.print("<h2 align=\"center\">Hello " + login + "</h2><br>");
 %>
-<form>
-
-</form>
+<div align="center">
+<form action="Servlet1" method="post">
+    <label>Choice date: <input type="date" name="calendar" value="1997-11-29"></label>
+    <input type="submit" value="Show">
+    </form>
+</div>
 </body>
 </html>

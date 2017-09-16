@@ -11,11 +11,6 @@
     <title>Personal Page</title>
 </head>
 <body>
-<%
-    PrintWriter writer = response.getWriter();
-    ServletContext context = config.getServletContext();
-    writer.print("host : "+context.getInitParameter("host"));
-%>
  <form action="FirstServlet" method="post">
      Login: <input type="text" name = "login"><br>
      Password <input type="password" name = "password"><br>

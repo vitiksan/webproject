@@ -23,6 +23,8 @@ public class CheckRHL extends HttpServlet {
         response.setContentType("text/html");
         response.setIntHeader("Refresh",15);
 
+        String style = getServletConfig().getInitParameter("style");
+
         String dateStamp = LocalDateTime.now().toString();
         String title = "Request headers list";
         writer.print(
@@ -31,7 +33,7 @@ public class CheckRHL extends HttpServlet {
                         "<title>" + title + "</title>" +
                         "</head>" +
                         "<body>" +
-                        "<table width=\"70%\" border=\"2\" align=\"center\">" +
+                        "<table "+style+">" +
                         "<tr>" +
                         "<td>"+dateStamp+"</td>" +
                         "</tr>" +

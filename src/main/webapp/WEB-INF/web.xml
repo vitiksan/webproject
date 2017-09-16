@@ -57,6 +57,10 @@
   <servlet>
     <servlet-name>CheckRHL</servlet-name>
     <servlet-class>com.test.servlets.CheckRHL</servlet-class>
+    <init-param>
+      <param-name>style</param-name>
+      <param-value>width="70%" border="2" align="center"</param-value>
+    </init-param>
   </servlet>
 
   <servlet-mapping>
