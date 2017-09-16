@@ -5,6 +5,7 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,6 +34,10 @@ public class FirstServlet extends HttpServlet {
         String admLogin = config.getInitParameter("login");
         String pass = config.getInitParameter("pass");
 
+        Cookie cookie = new Cookie("login",login);
+        cookie.setHttpOnly(true);
+        cookie.setMaxAge(120);
+        response.addCookie(cookie);
 
         if (admLogin.equals(signin.getLogin()) && pass.equals(signin.getPassword())){
             RequestDispatcher requestDispatcher  = request.getRequestDispatcher("login-success.jsp");
