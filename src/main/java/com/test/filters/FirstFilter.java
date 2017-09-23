@@ -4,8 +4,6 @@ import javax.servlet.*;
 import java.io.IOException;
 
 public class FirstFilter extends GenericFilter {
-    private FilterConfig filterConfig;
-
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("Enter in first filter");

@@ -128,8 +128,18 @@
     <url-pattern>/LoginServlet</url-pattern>
   </filter-mapping>
 
+  <filter>
+    <filter-name>AutorizationFilter</filter-name>
+    <filter-class>com.test.filters.AutorizationFilter</filter-class>
+  </filter>
+
   <filter-mapping>
-    <filter-name>FirstFilter</filter-name>
+    <filter-name>AutorizationFilter</filter-name>
     <url-pattern>/ProfileServlet</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>AutorizationFilter</filter-name>
+    <url-pattern>/LogoutServlet</url-pattern>
   </filter-mapping>
 </web-app>

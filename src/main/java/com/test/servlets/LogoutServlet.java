@@ -2,10 +2,7 @@ package com.test.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -19,12 +16,9 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
-        Cookie cookie = new Cookie("login", "");
-        cookie.setMaxAge(0);
-        response.addCookie(cookie);
-        cookie = new Cookie("password", "");
-        cookie.setMaxAge(0);
-        response.addCookie(cookie);
+        HttpSession session = request.getSession();
+        session.removeAttribute("login");
+        session.removeAttribute("password");
         writer.print("<html><head>" +
                 "<title>Logout page</title>" +
                 "</head>" +
