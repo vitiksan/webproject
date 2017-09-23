@@ -2,12 +2,10 @@ package com.test.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 // Created by on 17.09.2017.
 @WebServlet(name = "ProfileServlet")
@@ -20,17 +18,22 @@ public class ProfileServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
         String login = "";
-        String pasword = "";
+        String password = "";
         boolean isLogin = false;
-        Cookie[] cookies = request.getCookies();
+        HttpSession session = request.getSession();
+        Enumeration<String> names = request.getSession().getAttributeNames();
+        login = (String) session.getAttribute("login");
+        password = (String) session.getAttribute("password");
+
+        /*Cookie[] cookies = request.getCookies();
         for (int i = 0; i < cookies.length; i++) {
             if (cookies[i].getName().equals("login")) {
                 login = cookies[i].getValue();
                 isLogin = true;
             } else if (cookies[i].getName().equals("password"))
-                pasword = cookies[i].getValue();
-        }
-        if (isLogin) {
+                password = cookies[i].getValue();
+        }*/
+        if (!login.equals("")) {
             writer.print("<html><head><title>Profile page</title></head>" +
                     "<body link=\"#00008b\" vlink=\"#00008b\" alink=\"#dc143c\">" +
                     "<div align=\"center\">" +
@@ -41,7 +44,7 @@ public class ProfileServlet extends HttpServlet {
                     "<h1 align=\"center\">Your profile</h1>" +
                     "<div align=\"center\">" +
                     "<p>User name: " + login + "<br>" +
-                    "User password: " + pasword + "</p>" +
+                    "User password: " + password + "</p>" +
                     "</div>" +
                     "</body></html>");
         } else {

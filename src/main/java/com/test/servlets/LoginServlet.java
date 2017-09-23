@@ -3,10 +3,7 @@ package com.test.servlets;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 // Created by on 17.09.2017.
@@ -17,6 +14,9 @@ public class LoginServlet extends HttpServlet {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
 
+        HttpSession session = request.getSession();
+        session.setAttribute("login",login);
+        session.setAttribute("password",password);
         Cookie loginCookie = new Cookie("login",login);
         loginCookie.setMaxAge(600);
         Cookie passwordCookie = new Cookie("password",password);
