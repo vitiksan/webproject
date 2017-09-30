@@ -21,8 +21,8 @@
 <hr>
 <div align="center" style="border: 2px black;">
     <form action="LoginServlet" method="post">
-        <label>Login: <input type="text" name="login" placeholder="Login"></label><br>
-        <label>Password <input type="password" name="password" placeholder="Password"></label><br>
+        <label>Login: <input type="text" name="login" value="login" placeholder="Login"></label><br>
+        <label>Password <input type="password" name="password" value="password" placeholder="Password"></label><br>
         <input type="submit" value="Sign in">
     </form>
 </div>

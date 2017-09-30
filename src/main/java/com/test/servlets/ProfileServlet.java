@@ -18,7 +18,6 @@ public class ProfileServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
-        Enumeration<String> names = request.getSession().getAttributeNames();
         String login = (String) session.getAttribute("login");
         String password = (String) session.getAttribute("password");
         writer.print("<html><head><title>Profile page</title></head>" +
