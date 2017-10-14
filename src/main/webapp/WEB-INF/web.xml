@@ -161,4 +161,28 @@
         <filter-name>AutorizationFilter</filter-name>
         <url-pattern>/LogoutServlet</url-pattern>
     </filter-mapping>
+
+    <filter>
+        <filter-name>CountEntering</filter-name>
+        <filter-class>com.test.filters.CountEntering</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CountEntering</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>EncryptDecryptFilter</filter-name>
+        <filter-class>com.test.filters.EncryptDecryptFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncryptDecryptFilter</filter-name>
+        <url-pattern>/ProfileServlet</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>EncryptDecryptFilter</filter-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </filter-mapping>
 </web-app>

@@ -1,5 +1,7 @@
 package com.test.servlets;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,10 +25,10 @@ public class LoginServlet extends HttpServlet {
         if (login.equals(context.getInitParameter("login"))
                 && password.equals(context.getInitParameter("password"))) {
             HttpSession session = request.getSession();
-            session.setAttribute("login", login);
-            session.setAttribute("password", password);
+            session.setAttribute("login", DigestUtils.md5Hex(login));
+            session.setAttribute("password", DigestUtils.md5Hex(password));
             response.sendRedirect("/ProfileServlet");
-        }else{
+        } else {
             // тут буде логування
         }
     }

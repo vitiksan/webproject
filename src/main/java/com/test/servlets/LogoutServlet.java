@@ -17,8 +17,7 @@ public class LogoutServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
         HttpSession session = request.getSession();
-        session.removeAttribute("login");
-        session.removeAttribute("password");
+        session.invalidate();
         writer.print("<html><head>" +
                 "<title>Logout page</title>" +
                 "</head>" +

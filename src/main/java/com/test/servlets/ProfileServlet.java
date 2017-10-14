@@ -17,9 +17,9 @@ public class ProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
-        HttpSession session = request.getSession();
-        String login = (String) session.getAttribute("login");
-        String password = (String) session.getAttribute("password");
+        //HttpSession session = request.getSession();
+        String login = (String) request.getAttribute("login");
+        String password = (String) request.getAttribute("password");
         writer.print("<html><head><title>Profile page</title></head>" +
                 "<body link=\"#00008b\" vlink=\"#00008b\" alink=\"#dc143c\">" +
                 "<div align=\"center\">" +
