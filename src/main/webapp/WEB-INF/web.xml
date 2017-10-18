@@ -185,4 +185,14 @@
         <filter-name>EncryptDecryptFilter</filter-name>
         <url-pattern>/LogoutServlet</url-pattern>
     </filter-mapping>
+
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.test.servlets.UploadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
 </web-app>
