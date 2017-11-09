@@ -49,6 +49,10 @@ public class Person {
         this.birthday = birthday;
     }
 
+    public void setBirthday(String birthday) {
+        this.birthday = LocalDate.parse(birthday);
+    }
+
     @Override
     public String toString() {
         return "Person{" +
